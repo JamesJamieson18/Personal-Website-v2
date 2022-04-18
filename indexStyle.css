@@ -1,29 +1,8 @@
-
-html {
-    /* position: relative; */
-    /* margin: 0; */
-}
-body {
-    /* margin-bottom: 60px; */
-    background-image: url(Images/Background-Main.jpg);
-    /* margin: -1em; */
-    background-color: #cccccc;
-    height: 100vh;
-    max-height: 4069px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-
-main {
-    overflow: hidden;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);  
-}
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} /* CSS Reset */
 
 
 header {
@@ -32,10 +11,10 @@ header {
     backdrop-filter: saturate(180%) blur(20px);
     position: fixed;
     top: 0;
-    width: 101%; /* Full width */
+    width: 100%;
     height: auto;
     text-align: center;
-    margin: -1em ;
+    margin-top: -1em ;
 }
 
 button {
@@ -80,7 +59,20 @@ button:hover span:after {
     right: 0;
 }
 
+
+.title-container {
+    background-image: url(Images/Background-Main.jpg);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    padding: 20px 0;
+    justify-content: center;
+    height: 100vh;
+    display: flex;
+  }
+
 .title {
+    padding-top: 10vh;
     animation: revealText 1s forwards;
     text-align: center;
     font-family: 'Noto Sans', sans-serif;
@@ -90,9 +82,11 @@ button:hover span:after {
 }
 
 .content-first {
+    font-size: 10vh;
     animation-delay: .175s;
 }
 .content-second {
+    font-size: 5.5vh;
     animation-delay: 1.25s;
 }
 
