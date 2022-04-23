@@ -3,31 +3,57 @@
     <head>
         <title>James Jamieson</title>
         <link rel="stylesheet" href="indexStyle.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="indexScript.js">window.addEventListener("DOMContentLoaded", scrollLoop, false);</script>
     </head>
     <body>
 
         <header>
-            <div class="navbar">
-                <button>
-                    <a href="Programing.html"><span>Programing</span></a>
-                </button> 
-                <button>
-                    <a><span>3D Design</span></a>
-                </button>
-                <button>
-                    <a><span>About</span></a>
-                </button>
-            </div>
+            <div class="topnav" id="myTopnav">
+                <a href="index.html" class="active">Home</a>
+                <a href="Programing.html">Programing</a>
+                <a href="#contact">3D Design</a>
+                <a href="#about">About</a>
+                <a class="icon" onclick="navDropDown()">
+                  <i class="fa fa-bars"></i>
+                </a>
+              </div>
         </header>
 
         <main>
+            <div id="comBackground"></div>
             <div class=" title-container">
                 <div class="title">
                     <h1 class="title content-first">Hello, I'm James</h1>
                     <h3 class="title content-second">Software & Mechanical Engineer</h3>
                 </div>
             </div>
+            <div class="content-container">
+                <div class="content"> this is a test</div>
+            </div>
         </main>
+
+        <script>
+            window.addEventListener("DOMContentLoaded", scrollLoop, false);            
+
+            var comBackground = document.querySelector("#comBackground")
+
+            var xScrollPosition;
+            var yScrollPosition;
+
+            function scrollLoop(e) {
+                xScrollPosition = window.scrollX;
+                yScrollPosition = window.scrollY;
+
+                setTranslate(0, yScrollPosition * -0.5, comBackground);
+
+                requestAnimationFrame(scrollLoop);
+            }
+
+            function setTranslate(xPos, Ypos, el) {
+                el.style.transform = "translate3d(" + xPos + ", " + Ypos + "px, 0";
+            }
+        </script>
 
     </body>
 </html>

@@ -1,11 +1,83 @@
+/* CSS Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} /* CSS Reset */
+}
+
+/* This is for testing, remove for final version*/
+body {
+    /* height: 150em; */
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+  
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: fixed;}
+  .topnav.responsive a.icon {
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+}
 
 
-header {
+/* Add a black background color to the top navigation */
+.topnav {
+  z-index:1;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  position: fixed;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+  
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: 'Noto Sans', sans-serif;
+}
+  
+/* Change the color of links on hover */
+.topnav a:hover {
+  color: #dadada;
+}
+  
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #04a5aa;
+  color: white;
+}
+  
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+
+/* header {
     overflow: hidden;
     background: rgba(0,0,0,0.8);
     backdrop-filter: saturate(180%) blur(20px);
@@ -22,7 +94,6 @@ button {
     border-radius: 5px;
     border: none;
     background: none;
-    /* color: #eeeeee; */
     text-align: center;
     font-size: 15px;
     padding: 15px;
@@ -48,37 +119,42 @@ button span:after {
     right: -20px;
     transition: 0.5s;
 }
-button:hover {
-    /* background-color: #364d63; */
-}
 button:hover span {
     padding-right: 25px;
 }  
 button:hover span:after {
     opacity: 1;
     right: 0;
+} */
+
+
+#comBackground {
+  background-image: url(Images/Background-Main.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: fixed;
+  width: 100vw;
+  height: 120vh;
+  z-index: -1;
 }
 
 
 .title-container {
-    background-image: url(Images/Background-Main.jpg);
-    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat;
-    padding: 20px 0;
-    justify-content: center;
-    height: 100vh;
-    display: flex;
-  }
+  padding: 20px 0;
+  justify-content: center;
+  height: 100vh;
+  display: flex;
+}
 
 .title {
-    padding-top: 10vh;
-    animation: revealText 1s forwards;
-    text-align: center;
-    font-family: 'Noto Sans', sans-serif;
-    color: #ffffff;
-    text-shadow : 3px 2px 0px #a3a3a3;
-    opacity: 0;
+  padding-top: 15vh;
+  animation: revealText 1s forwards;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+  color: #ffffff;
+  text-shadow : 3px 2px 0px #a3a3a3;
+  opacity: 0;
 }
 
 .content-first {
@@ -91,11 +167,20 @@ button:hover span:after {
 }
 
 @keyframes revealText {
-    from{
-        transform: translateY(20px);
-    }
-    to{
-        opacity: 1;
-        transform: none;
-    }
+  from{
+    transform: translateY(20px);
+  }
+  to{
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* This is for testing only */
+.content-container {
+  background-color: grey;
+  padding: 20px 0;
+    justify-content: center;
+    height: 120vh;
+    display: flex;
 }
