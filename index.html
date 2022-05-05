@@ -47,25 +47,6 @@
         </main>
 
         <script>
-            window.addEventListener("DOMContentLoaded", scrollLoop, false);            
-
-            var comBackground = document.querySelector("#comBackground")
-
-            var xScrollPosition;
-            var yScrollPosition;
-
-            function scrollLoop(e) {
-                xScrollPosition = window.scrollX;
-                yScrollPosition = window.scrollY;
-
-                setTranslate(0, yScrollPosition * -0.5, comBackground);
-
-                requestAnimationFrame(scrollLoop);
-            }
-
-            function setTranslate(xPos, Ypos, el) {
-                el.style.transform = "translate3d(" + xPos + ", " + Ypos + "px, 0";
-            }
         </script>
 
     </body>

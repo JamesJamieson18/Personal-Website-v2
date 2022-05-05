@@ -8,7 +8,8 @@ function navDropDown() {
     }
 }
 
-window.addEventListener("DOMContentLoaded", scrollLoop, false);
+
+window.addEventListener("DOMContentLoaded", scrollLoop, false);            
 
 var comBackground = document.querySelector("#comBackground")
 
@@ -19,7 +20,7 @@ function scrollLoop(e) {
   xScrollPosition = window.scrollX;
   yScrollPosition = window.scrollY;
 
-  setTranslate(0, yScrollPosition, comBackground);
+  setTranslate(0, yScrollPosition * -0.5, comBackground);
 
   requestAnimationFrame(scrollLoop);
 }
